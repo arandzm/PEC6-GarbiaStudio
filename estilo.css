@@ -1,0 +1,322 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: #ffffff;
+  color: #111111;
+  padding: 40px 60px;
+  max-width: 1440px;
+  margin: 0 auto;
+  line-height: 1.2;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* HEADER */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.logo {
+  font-size: 36px;
+  font-weight: 400;
+  letter-spacing: -0.5px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.nav-btn {
+  padding: 12px 28px;
+  border-radius: 50px;
+  font-size: 15px;
+  font-weight: 400;
+  transition: background 0.2s ease;
+}
+
+.nav-btn.active {
+  background-color: #c0c0c0;
+  color: #111;
+}
+
+.nav-btn:hover:not(.active) {
+  background-color: #f0f0f0;
+}
+
+/* SUBHEADER / INTRO */
+.intro-text {
+  width: 420px;
+  font-size: 10px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  line-height: 1.3;
+  margin-bottom: 60px;
+}
+
+/* GRID DE PROYECTOS */
+.projects-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 120px;
+}
+
+.project-card img {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  border-radius: 24px;
+  margin-bottom: 16px;
+}
+
+.project-category {
+  font-size: 12px;
+  color: #111111;
+  margin-bottom: 8px;
+  font-weight: 400;
+}
+
+.project-title {
+  font-size: 26px;
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.5px;
+}
+
+/* FOOTER */
+.footer-logo {
+  font-size: 72px;
+  font-weight: 400;
+  margin-bottom: 50px;
+  letter-spacing: -1.5px;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.footer-left h2 {
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 1.25;
+  margin-bottom: 24px;
+}
+
+.footer-left address {
+  font-style: normal;
+  font-size: 12px;
+  line-height: 1.5;
+  margin-bottom: 30px;
+}
+
+.footer-left .copyright {
+  font-size: 12px;
+}
+
+.footer-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 40px;
+}
+
+.footer-services {
+  font-size: 13px;
+  line-height: 1.4;
+  text-align: left;
+  width: 240px;
+}
+
+.cta-button {
+  display: inline-block;
+  background-color: #d1d1d1;
+  color: #111;
+  padding: 18px 36px;
+  border-radius: 50px;
+  font-size: 14px;
+  font-weight: 400;
+  width: 240px;
+  text-align: center;
+  transition: background 0.2s ease;
+}
+
+.cta-button:hover {
+  background-color: #b8b8b8;
+}
+
+/* RESPONSIVE BÁSICO */
+@media (max-width: 900px) {
+  body {
+    padding: 20px;
+  }
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .footer-right {
+    align-items: flex-start;
+  }
+}
+
+/* ==========================================================
+   AÑADIDOS PEC 6
+   ========================================================== */
+
+/* Enlaces de tarjeta */
+.card-link { display: block; }
+
+/* Hover (lo activa js/funciones.js) */
+.project-card { transition: opacity 0.25s ease; }
+.projects-grid.has-hover .project-card:not(.is-hovered) { opacity: 0.5; }
+
+/* Botón hamburguesa: lo crea el JS; oculto en escritorio */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: 0;
+  padding: 10px;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+}
+.menu-toggle span { display: block; width: 24px; height: 2px; background: #111; transition: transform 0.25s ease, opacity 0.25s ease; }
+.menu-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.menu-toggle.open span:nth-child(2) { opacity: 0; }
+.menu-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ---------- STUDIO ---------- */
+.about { margin-bottom: 140px; }
+.page-title { font-size: 48px; font-weight: 400; letter-spacing: -1px; margin: 50px 0 40px 0; }
+.about-text { max-width: 640px; margin-left: 0; font-size: 15px; line-height: 1.3; }
+.about-text p { margin-bottom: 20px; }
+
+/* ---------- CONTACT (CORREGIDO SEGÚN FIGMA) ---------- */
+.contact { display: flex; justify-content: center; margin: 40px 0 140px; }
+.contact-card {
+  width: 100%;
+  max-width: 440px;
+  aspect-ratio: 1 / 1;
+  border-radius: 40px;
+  padding: 24px;
+  display: flex;
+  background: url('../assets/img/About%20me.jpg') center / cover no-repeat;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+.contact-inner {
+  flex: 1;
+  border-radius: 28px;
+  padding: 40px 32px;
+  background: rgba(238, 236, 225, 0.92);
+  backdrop-filter: blur(4px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.contact-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; color: #555555; }
+.contact-value { font-size: 22px; font-weight: 400; margin-bottom: 24px; letter-spacing: -0.3px; }
+.contact-value:last-child { margin-bottom: 0; }
+.contact-value:hover { text-decoration: underline; }
+
+/* ---------- DETALLE DE PROYECTO ---------- */
+.detail { margin-bottom: 120px; }
+
+.detail-summary {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 32px;
+  padding-bottom: 28px;
+  border-bottom: 1px solid #dddddd;
+  margin-bottom: 40px;
+}
+.summary-thumb { width: 110px; height: 110px; background: #e0e0e0; border-radius: 24px; }
+.summary-text { max-width: 420px; font-size: 16px; line-height: 1.3; margin-bottom: 28px; }
+.meta { display: flex; flex-wrap: wrap; gap: 24px 64px; }
+.meta dt { font-size: 10px; color: #666; margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.4px; }
+.meta dd { font-size: 12px; }
+
+.detail-cover { width: 100%; height: 520px; background: #e0e0e0; margin-bottom: 60px; border-radius: 24px; overflow: hidden; }
+
+.detail-content { max-width: 720px; margin: 0 0 60px 0; }
+.detail-title { font-size: 36px; font-weight: 400; letter-spacing: -0.5px; margin-bottom: 16px; }
+.detail-subtitle { font-size: 16px; font-weight: 500; margin-bottom: 16px; color: #444; }
+.detail-content p { font-size: 14px; line-height: 1.4; margin-bottom: 16px; color: #222; }
+
+.gallery { display: flex; flex-direction: column; gap: 24px; }
+.gallery-row { display: grid; gap: 24px; }
+.gallery-row.two { grid-template-columns: 1fr 1fr; }
+.gallery-row.one { grid-template-columns: 1fr; }
+.g-item { background: #e0e0e0; border-radius: 24px; height: 360px; }
+.g-item.tall { height: 440px; }
+
+/* Planos: integrados de forma limpia */
+.g-item.plan { height: auto; background: none; border-radius: 0; }
+.g-item.plan img { height: auto; object-fit: contain; }
+
+/* ---------- RESPONSIVE (añadidos) ---------- */
+@media (max-width: 900px) {
+  .logo { font-size: 28px; }
+  header { position: relative; }
+  .menu-toggle { display: flex; }
+  nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 6px;
+    min-width: 200px;
+    padding: 12px;
+    background: #ffffff;
+    border-radius: 24px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    z-index: 10;
+  }
+  nav.open { display: flex; }
+  .nav-btn { text-align: center; }
+
+  .intro-text { width: 100%; }
+  .projects-grid { margin-bottom: 64px; }
+  .footer-logo { font-size: 48px; }
+
+  .page-title, .about-text, .detail-content { margin-left: 0; }
+  .detail-cover { height: 300px; }
+  .g-item, .g-item.tall { height: 240px; }
+  .g-item.plan { height: 200px; }
+}
+
+@media (max-width: 560px) {
+  .gallery-row.two { grid-template-columns: 1fr; }
+  .detail-summary { grid-template-columns: 1fr; }
+  .page-title { font-size: 36px; }
+  .contact-card { max-width: 100%; aspect-ratio: auto; }
+}
+
+/* ---------- IMÁGENES ---------- */
+.summary-thumb, .detail-cover, .g-item { overflow: hidden; }
+.summary-thumb img, .detail-cover img, .g-item img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

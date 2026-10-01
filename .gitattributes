@@ -1,0 +1,14 @@
+# Auto detect text files and perform LF normalization
+* text auto
+
+# Explicitly declare text files
+*.html text
+*.css text
+*.js text
+*.md text
+
+# Declare binary files (images, icons)
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.ico binary
